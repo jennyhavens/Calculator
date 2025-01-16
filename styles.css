@@ -1,0 +1,84 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: gray;
+}
+
+.container {
+    width: 500px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.display {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 120px;
+    background-color: #222;
+    color: #fff;
+    font-size: 70px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.smallButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    gap: 100px;
+    text-align: justify;
+}
+
+.largeButtons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 100px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    font-size: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #a9a8a8;
+}
+
+button.operator {
+    background-color: #f9a825;
+    color: #fff;
+}
+
+button.operator:hover {
+    background-color: #f57f17;
+}
+
+button#clear {
+    background-color: #d32f2f;
+    color: #fff;
+    height: 70px;
+    width: 150px;
+}
+
+button#delete {
+    height: 70px;
+    width: 150px;
+}
