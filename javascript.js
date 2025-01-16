@@ -1,19 +1,38 @@
-const add = function(a, b) {
-    return (a + b);
-  };
-  console.log(add(39, 1));
-  
-  const subtract = function(a, b) {
-    return (a - b);
-  };
-  console.log(subtract(41, 1));
-  
-  const multiply = function(a, b) {
-    return (a * b);
-  };
-  console.log(multiply(8, 5));
+let num1 = parseFloat(prompt("Enter first number"));
+let operator = prompt("Enter operator");
+let num2 = parseFloat(prompt("Enter second number"));
+let result;
 
-  const divide = function(a, b) {
-    return (a / b);
+const add = function(num1, num2) {
+    return (num1 + num2);
+  };
+  
+  const subtract = function(num1, num2) {
+    return (num1 - num2);
+  };
+  
+  const multiply = function(num1, num2) {
+    return (num1 * num2);
+  };
+
+  const divide = function(num1, num2) {
+    return (num1 / num2);
   }
-  console.log(divide(80, 2));
+
+function operate(num1, operator, num2) {
+    if (operator === '+') {
+        result = add(num1, num2);
+    } else if (operator === '-') {
+        result = subtract(num1, num2);
+    } else if (operator === '*') {
+        result = multiply(num1, num2);
+    } else if (operator === '/') {
+        result = divide(num1, num2);
+    } else {
+        result = 'Invalid operator'
+    };
+};
+
+operate(num1, operator, num2);
+
+console.log(result);
