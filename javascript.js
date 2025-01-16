@@ -16,8 +16,12 @@ const add = function(num1, num2) {
   };
 
   const divide = function(num1, num2) {
-    return (num1 / num2);
-  }
+    if (num2 === 0) {
+        alert('You can\'t divide by 0 silly!');
+    } else {
+        return (num1 / num2);
+    }
+  };
 
 function operate(num1, operator, num2) {
     if (operator === '+') {
@@ -29,8 +33,8 @@ function operate(num1, operator, num2) {
     } else if (operator === '/') {
         result = divide(num1, num2);
     } else {
-        result = 'Invalid operator'
-    };
+        alert = 'Invalid operator';
+    }
 };
 
 operate(num1, operator, num2);
