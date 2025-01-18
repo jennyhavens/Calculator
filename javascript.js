@@ -1,50 +1,76 @@
-//let num1 = parseFloat(prompt("Enter first number"));
-//let operator = prompt("Enter operator");
-//let num2 = parseFloat(prompt("Enter second number"));
-//let result;
+let current = "";
+let previous = "";
+let operator = null;
 
-function popDisplay() {
-    const populate = document.querySelector('.largeButtons');
-    populate.addEventListener('click', popDisplay);
-    alert ('it was clicked!');
+
+//calculations
+const add = (num1, num2) => num1 + num2;
+const subtract = (num1, num2) => num1 - num2;
+const multiply = (num1, num2) => num1 * num2;
+const divide = (num1, num2) => (num2 !== 0 ? num1 / num2 : "You can\'t divide by 0 silly!");
+
+//display
+const display = document.querySelector('.display');
+
+function popDisplay(value) {
+    display.textContent = value || "0";
 };
 
-popDisplay();
-
-const add = function(num1, num2) {
-    return (num1 + num2);
-  };
-  
-  const subtract = function(num1, num2) {
-    return (num1 - num2);
-  };
-  
-  const multiply = function(num1, num2) {
-    return (num1 * num2);
-  };
-
-  const divide = function(num1, num2) {
-    if (num2 === 0) {
-        alert('You can\'t divide by 0 silly!');
-    } else {
-        return (num1 / num2);
-    }
-  };
-
-function operate(num1, operator, num2) {
-    if (operator === '+') {
-        result = add(num1, num2);
-    } else if (operator === '-') {
-        result = subtract(num1, num2);
-    } else if (operator === '*') {
-        result = multiply(num1, num2);
-    } else if (operator === '/') {
-        result = divide(num1, num2);
-    } else {
-        alert = 'Invalid operator';
-    }
+//operate
+function operate() {
+    if (previous && operator && current) {
+            const num1 = parseFloat(previous);
+            const num2 = parseFloat(current);
+        if (operator === '+') {
+            add(num1, num2);
+        } else if (operator === '-') {
+            subtract(num1, num2);
+        } else if (operator === '*') {
+            multiply(num1, num2);
+        } else if (operator === '/') {
+            divide(num1, num2);
+        } else {
+            return num2;
+        }
+    };
 };
 
-operate(num1, operator, num2);
+//button clicks
+document.querySelectorAll('.btn').forEach((button) =>
+    button.addEventListener('click', () => {
+        const value = button.textContent;
+        console.log(value);
 
-console.log(result);
+        if (value === 'AC') {
+            current = "";
+            previous = "";
+            operator = null;
+            popDisplay("0");
+        } else if (value === 'delete') {
+            current = current.slice(0, -1);
+            popDisplay(current || "0");
+        } else if (["+", "-", "x", "/"].includes(value)) {
+            if (current) {
+                if (previous && operator) {
+                    previous = operate();
+                    popDisplay(previous);
+                } else {
+                    previous = current;
+                }
+                operator = value;
+                current = "";
+            }
+        } else if (value === "=") {
+            if (current && previous && operator) {
+                current = operate();
+                previous = "";
+                operator = null;
+                popDisplay(current);
+            }
+        } else {
+            if (value === "." && current.includes(".")) return;
+            current += value;
+            popDisplay(current);
+        }
+    })
+);
