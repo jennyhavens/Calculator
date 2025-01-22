@@ -20,7 +20,7 @@ body {
     padding: 20px;
 }
 
-.display {
+#display {
     display: flex;
     justify-content: right;
     align-items: center;

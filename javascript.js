@@ -1,34 +1,33 @@
-let current = "";
-let previous = "";
+let current = '';
+let previous = '';
 let operator = null;
-
 
 //calculations
 const add = (num1, num2) => num1 + num2;
 const subtract = (num1, num2) => num1 - num2;
 const multiply = (num1, num2) => num1 * num2;
-const divide = (num1, num2) => (num2 !== 0 ? num1 / num2 : "You can\'t divide by 0 silly!");
+const divide = (num1, num2) => (num2 !== 0 ? num1 / num2 : 'Error');
 
 //display
-const display = document.querySelector('.display');
+const display = document.getElementById('display');
 
 function popDisplay(value) {
-    display.textContent = value || "0";
+    display.textContent = value || '0';
 };
 
 //operate
 function operate() {
     if (previous && operator && current) {
-            const num1 = parseFloat(previous);
-            const num2 = parseFloat(current);
+        const num1 = parseFloat(previous);
+        const num2 = parseFloat(current);
         if (operator === '+') {
-            add(num1, num2);
+            return add(num1, num2);
         } else if (operator === '-') {
-            subtract(num1, num2);
+            return subtract(num1, num2);
         } else if (operator === '*') {
-            multiply(num1, num2);
+            return multiply(num1, num2);
         } else if (operator === '/') {
-            divide(num1, num2);
+            return divide(num1, num2);   
         } else {
             return num2;
         }
@@ -42,14 +41,14 @@ document.querySelectorAll('.btn').forEach((button) =>
         console.log(value);
 
         if (value === 'AC') {
-            current = "";
-            previous = "";
+            current = '';
+            previous = '';
             operator = null;
-            popDisplay("0");
+            popDisplay('0');
         } else if (value === 'delete') {
             current = current.slice(0, -1);
-            popDisplay(current || "0");
-        } else if (["+", "-", "x", "/"].includes(value)) {
+            popDisplay(current || '0');
+        } else if (['+', '-', '*', '/'].includes(value)) {
             if (current) {
                 if (previous && operator) {
                     previous = operate();
@@ -58,19 +57,41 @@ document.querySelectorAll('.btn').forEach((button) =>
                     previous = current;
                 }
                 operator = value;
-                current = "";
+                current = '';
             }
-        } else if (value === "=") {
+        } else if (value === '=') {
             if (current && previous && operator) {
                 current = operate();
-                previous = "";
+                previous = '';
                 operator = null;
                 popDisplay(current);
             }
         } else {
-            if (value === "." && current.includes(".")) return;
+            if (value === '.' && current.includes('.')) return;
             current += value;
             popDisplay(current);
         }
     })
 );
+
+// Keyboard support
+document.addEventListener("keydown", (e) => {
+    const keyMap = {
+        "/": "/",
+        "*": "*",
+        "+": "+",
+        "-": "-",
+        Enter: "=",
+        Backspace: "delete",
+        Escape: "AC",
+    };
+    const key = keyMap[e.key] || e.key;
+
+    const button = [...document.querySelectorAll(".btn")].find(
+        (btn) => btn.dataset.value === key
+    );
+
+    if (button) {
+        button.click();
+    }
+});
