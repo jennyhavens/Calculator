@@ -12,7 +12,7 @@ const divide = (num1, num2) => (num2 !== 0 ? num1 / num2 : 'Error');
 const display = document.getElementById('display');
 
 function popDisplay(value) {
-    display.textContent = value || '0';
+        display.textContent = value || '0';
 };
 
 //operate
@@ -75,20 +75,20 @@ document.querySelectorAll('.btn').forEach((button) =>
 );
 
 // Keyboard support
-document.addEventListener("keydown", (e) => {
-    const keyMap = {
-        "/": "/",
-        "*": "*",
-        "+": "+",
-        "-": "-",
-        Enter: "=",
-        Backspace: "delete",
-        Escape: "AC",
+document.addEventListener('keydown', (e) => {
+    const keyLog = {
+        '/': '/',
+        '*': '*',
+        '+': '+',
+        '-': '-',
+        Enter: '=',
+        Backspace: 'delete',
+        Escape: 'AC',
     };
-    const key = keyMap[e.key] || e.key;
+    const key = keyLog[e.key] || e.key;
 
-    const button = [...document.querySelectorAll(".btn")].find(
-        (btn) => btn.dataset.value === key
+    const button = [...document.querySelectorAll('.btn')].find(
+        (btn) => btn.textContent === key
     );
 
     if (button) {
