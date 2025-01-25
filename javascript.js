@@ -11,8 +11,13 @@ const divide = (num1, num2) => (num2 !== 0 ? num1 / num2 : 'Error');
 //display
 const display = document.getElementById('display');
 
-function popDisplay(value) {
-        display.textContent = value || '0';
+function popDisplay(number) {
+    if (number === 'Error') {
+        display.textContent = 'Error'
+    } else {
+        let roundedNumber = Math.round(number * 10000000) / 10000000;
+        display.textContent = roundedNumber || '0';
+    };
 };
 
 //operate
