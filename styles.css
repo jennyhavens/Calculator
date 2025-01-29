@@ -3,59 +3,337 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: rgb(21, 57, 43);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: rgb(21, 57, 43);
 }
 
-.container {
-    width: 500px;
-    background-color: rgb(174, 224, 198);
-    border: 5px solid rgb(157, 203, 179);
-    border-radius: 10px;
-    box-shadow: 10px 10px 50px black;
-    padding: 20px;
+/* Device = Desktops */
+@media (min-width: 1281px) {
+    body {background-color: rgb(165, 0, 17);
+    }
+
+    .container {
+        background-color: rgb(174, 224, 198);
+        border: 5px solid rgb(157, 203, 179);
+        border-radius: 10px;
+        box-shadow: 10px 10px 50px black;
+        width: 450px;
+        padding: 20px;
+    }
+    
+    #display {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        min-height: 100px;
+        background-color: rgb(139, 138, 138);
+        color: black;
+        font-size: 70px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .smallButtons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        gap: 100px;
+        text-align: center;
+    }
+    
+    .largeButtons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+    
+    .btn {
+        min-height: 100px;
+        background-color: rgb(92, 221, 154);
+        border: none;
+        border-radius: 5px;
+        font-size: 40px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        color: black;
+        padding: 0;
+    }
+}
+  
+/* Device = Laptops, Desktops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    body {background-color: rgb(236, 160, 8);
+    }
+
+    .container {
+        background-color: rgb(174, 224, 198);
+        border: 5px solid rgb(157, 203, 179);
+        border-radius: 10px;
+        box-shadow: 10px 10px 50px black;
+        width: 450px;
+        padding: 20px;
+    }
+    
+    #display {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        min-height: 100px;
+        background-color: rgb(139, 138, 138);
+        color: black;
+        font-size: 70px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .smallButtons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        gap: 100px;
+        text-align: center;
+    }
+    
+    .largeButtons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+    
+    .btn {
+        min-height: 100px;
+        background-color: rgb(92, 221, 154);
+        border: none;
+        border-radius: 5px;
+        font-size: 40px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        color: black;
+        padding: 0;
+    }
+}
+  
+  /*Device = Tablets, Ipads (portrait)*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {background-color: rgb(95, 236, 8);
+    }
+
+    .container {
+        background-color: rgb(174, 224, 198);
+        border: 5px solid rgb(157, 203, 179);
+        border-radius: 10px;
+        box-shadow: 10px 10px 50px black;
+        width: 450px;
+        padding: 20px;
+    }
+    
+    #display {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        min-height: 100px;
+        background-color: rgb(139, 138, 138);
+        color: black;
+        font-size: 70px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .smallButtons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        gap: 100px;
+        text-align: center;
+    }
+    
+    .largeButtons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+    
+    .btn {
+        min-height: 100px;
+        background-color: rgb(92, 221, 154);
+        border: none;
+        border-radius: 5px;
+        font-size: 40px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        color: black;
+        padding: 0;
+    } 
+}
+  
+/* Device = Tablets, Ipads (landscape) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    body {background-color: rgb(8, 111, 236);
+        margin-top: 100px;
+    }
+
+    .container {
+        background-color: rgb(174, 224, 198);
+        border: 5px solid rgb(157, 203, 179);
+        border-radius: 10px;
+        box-shadow: 10px 10px 50px black;
+        width: 450px;
+        padding: 20px;
+    }
+    
+    #display {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        min-height: 100px;
+        background-color: rgb(139, 138, 138);
+        color: black;
+        font-size: 70px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .smallButtons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        gap: 100px;
+        text-align: center;
+    }
+    
+    .largeButtons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+    
+    .btn {
+        min-height: 100px;
+        background-color: rgb(92, 221, 154);
+        border: none;
+        border-radius: 5px;
+        font-size: 40px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        color: black;
+        padding: 0;
+    }
 }
 
-#display {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    height: 120px;
-    background-color: rgb(139, 138, 138);
-    color: black;
-    font-size: 70px;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
+/* Device = Low Resolution Tablets, Mobiles (landscape) */
+@media (min-width: 481px) and (max-width: 767px) {
+    body {background-color: rgb(116, 49, 203);
+        margin-top: 100px;
+    }
 
-.smallButtons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    gap: 100px;
-    text-align: justify;
+    .container {
+        background-color: rgb(174, 224, 198);
+        border: 5px solid rgb(157, 203, 179);
+        border-radius: 10px;
+        box-shadow: 10px 10px 50px black;
+        width: 350px;
+        padding: 10px;
+    }
+    
+    #display {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        min-height: 80px;
+        background-color: rgb(139, 138, 138);
+        color: black;
+        font-size: 70px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    
+    .smallButtons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        gap: 80px;
+        text-align: center;
+    }
+    
+    .largeButtons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+    }
+    
+    .btn {
+        min-height: 80px;
+        background-color: rgb(92, 221, 154);
+        border: none;
+        border-radius: 5px;
+        font-size: 35px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        color: black;
+        padding: 0;
+    } 
 }
+  
+/* Device = Most mobiles (Portrait) */
+@media (min-width: 320px) and (max-width: 480px) {
+    body {background-color: rgb(253, 10, 253);
+    }
 
-.largeButtons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-.btn {
-    height: 100px;
-    background-color: rgb(92, 221, 154);
-    border: none;
-    border-radius: 5px;
-    font-size: 40px;
-    cursor: pointer;
-    transition: background-color 0.2s;
+    .container {
+        background-color: rgb(174, 224, 198);
+        border: 5px solid rgb(157, 203, 179);
+        border-radius: 10px;
+        box-shadow: 10px 10px 50px black;
+        width: 350px;
+        padding: 10px;
+    }
+    
+    #display {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        min-height: 80px;
+        background-color: rgb(139, 138, 138);
+        color: black;
+        font-size: 70px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    
+    .smallButtons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        gap: 80px;
+        text-align: center;
+    }
+    
+    .largeButtons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+    }
+    
+    .btn {
+        min-height: 80px;
+        background-color: rgb(92, 221, 154);
+        border: none;
+        border-radius: 5px;
+        font-size: 35px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        color: black;
+        padding: 0;
+    } 
 }
 
 button:hover {
