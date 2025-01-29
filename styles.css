@@ -12,8 +12,6 @@ body {
 
 /* Device = Desktops */
 @media (min-width: 1281px) {
-    body {background-color: rgb(165, 0, 17);
-    }
 
     .container {
         background-color: rgb(174, 224, 198);
@@ -66,8 +64,6 @@ body {
   
 /* Device = Laptops, Desktops */
 @media (min-width: 1025px) and (max-width: 1280px) {
-    body {background-color: rgb(236, 160, 8);
-    }
 
     .container {
         background-color: rgb(174, 224, 198);
@@ -120,8 +116,6 @@ body {
   
   /*Device = Tablets, Ipads (portrait)*/
 @media (min-width: 768px) and (max-width: 1024px) {
-    body {background-color: rgb(95, 236, 8);
-    }
 
     .container {
         background-color: rgb(174, 224, 198);
@@ -174,7 +168,7 @@ body {
   
 /* Device = Tablets, Ipads (landscape) */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    body {background-color: rgb(8, 111, 236);
+    body {
         margin-top: 100px;
     }
 
@@ -229,7 +223,7 @@ body {
 
 /* Device = Low Resolution Tablets, Mobiles (landscape) */
 @media (min-width: 481px) and (max-width: 767px) {
-    body {background-color: rgb(116, 49, 203);
+    body {
         margin-top: 100px;
     }
 
@@ -284,8 +278,6 @@ body {
   
 /* Device = Most mobiles (Portrait) */
 @media (min-width: 320px) and (max-width: 480px) {
-    body {background-color: rgb(253, 10, 253);
-    }
 
     .container {
         background-color: rgb(174, 224, 198);
